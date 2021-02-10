@@ -10,20 +10,18 @@ php:
    - 7.0
 
 # optionally specify a list of environments, for example to test different RDBMS
-env:
-  - DB=mysql
-
-# optionally set up exclusions and allowed failures in the matrix
-matrix:
-  allow_failures:
-    - php: 7.0
+# env:
+  #- DB=mysql
+  
+before_script:
+  - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
 
 # configure notifications (email, IRC, campfire etc)
-notifications:
-  irc: "irc.freenode.org#yourfavouriteroomfortravis"
+#notifications:
+ # irc: "irc.freenode.org#yourfavouriteroomfortravis"
     
   deploy:
   provider: pages
