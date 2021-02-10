@@ -1,0 +1,14 @@
+{
+    "name": "ascarikz1/htdocs",
+    "description": "gestao-atendimento",
+    "authors": [
+        {
+            "name": "Luiz Koike",
+            "email": "tsuyoshikoike0@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+           "gestao-atendimento\\" : "app/"
+        }
+    }
