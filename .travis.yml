@@ -2,13 +2,9 @@
 language: php
 
 # list any PHP version you want to test against
-php:
-  # using major version aliases
-  # aliased to a recent 5.6.x version
-   - 5.6
-  # aliased to a recent 7.x version
-   - 7.0
-
+ - php: 5.6
+   env: WP_TRAVISCI=travis:phpunit
+   
 # optionally specify a list of environments, for example to test different RDBMS
 # env:
   #- DB=mysql
@@ -22,10 +18,3 @@ after_success:
 # configure notifications (email, IRC, campfire etc)
 #notifications:
  # irc: "irc.freenode.org#yourfavouriteroomfortravis"
-    
-  deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_ACCESS_TOKEN # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
-  on:
-    branch: main
