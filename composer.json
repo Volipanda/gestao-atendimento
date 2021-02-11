@@ -17,5 +17,8 @@
         "psr-4": {
            "gestao-atendimento\\" : "app/"
         }
-    }
+    },
+    "scripts": {
+      "test": "phpunit"
+   }
 }
